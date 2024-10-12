@@ -8,17 +8,46 @@ class Student:
         self.set_mob()
         self.set_email()
     def set_name(self):
-        print("Enter Name: ")
-        self.name = input()
+        while True:
+            print("Enter Name: ")
+            name = input()
+            if len(name)<3:
+                print("Invalid format!!!\nName should contain minimum of 3 characters...")
+            else:
+                break
+        self.name = name
     def set_year(self):
-        print("Enter Admission Year: ")
-        self.year = input()
+        while True:
+            print("Enter Year: ")
+            while True:
+                try:
+                    year = int(input())
+                    break
+                except Exception:
+                    print("Enter Integer: ")
+            if len(year)!=4:
+                print("Invalid format!!!\nEnter year of four digit...")
+            else:
+                break
+        self.year = year
     def set_mob(self):
-        print("Enter Mobile Number: ")
-        self.mob = input()
+        while True:
+            print("Enter Mobile Number: ")
+            mob = input()
+            if len(mob)!=10:
+                print("Invalid format!!!\nMobile Number of 10 digits needed...")
+            else:
+                break
+        self.mob = mob
     def set_email(self):
-        print("Enter Email: ")
-        self.email = input()
+        while True:
+            print("Enter Email: ")
+            email = input()
+            if email.endswith("@gmail.com")==False:
+                print("Invalid format!!!\nEmail should ends with \"@gmail.com\"")
+            else:
+                break
+        self.email = email
     def get_name(self):
         return self.name
     def get_year(self):
